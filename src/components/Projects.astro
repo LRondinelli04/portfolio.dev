@@ -2,8 +2,10 @@
 import GitHub from "./icons/GitHub.astro"
 import NextJS from "./icons/NextJS.astro"
 import Tailwind from "./icons/Tailwind.astro"
-import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
+import JavaScript from "./icons/JavaScript.astro"
+import Angular from "./icons/Angular.astro"
+import DotNet from "./icons/DotNet.astro"
 
 const TAGS = {
   NEXT: {
@@ -16,41 +18,46 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
+  JAVASCRIPT: {
+    name: "JavaScript",
+    class: "bg-[#f7df1e] text-black",
+    icon: JavaScript,
+  },
   ANGULAR: {
     name: "Angular",
-    class: "bg-red-600 text-white",
+    class: "bg-[#dd0031] text-white",
     icon: Angular,
   },
   DOTNET: {
     name: ".NET",
-    class: "bg-purple-600 text-white",
+    class: "bg-[#512bd4] text-white",
     icon: DotNet,
   },
 }
+
 const PROJECTS = [
   {
     title: "Gestor de Tarjetas de Crédito - Validador y Administrador",
-  description:
+    description:
     "Aplicación web desarrollada con Angular para el frontend y .NET C# para el backend. Permite agregar tarjetas de crédito verificando la validez de los datos ingresados y las almacena en una lista. Ideal para gestionar y validar tarjetas de manera eficiente.",
-  // link: "https://github.com/LRondinelli04/Fiscalia-de-Estado/tree/main/ProyectoPracticas/proyectoTarjetaDeCredito",
-  github: "https://github.com/LRondinelli04/Fiscalia-de-Estado/tree/main/ProyectoPracticas/proyectoTarjetaDeCredito",
-  image: "/projects/Proyecto-TarjetaDeCredito.jpg",
-  tags: [TAGS.ANGULAR, TAGS.DOTNET],
+    github: "https://github.com/LRondinelli04/Fiscalia-de-Estado/tree/main/ProyectoPracticas/proyectoTarjetaDeCredito",
+    image: "/projects/Proyecto-TarjetaDeCredito.jpg",
+    tags: [TAGS.ANGULAR, TAGS.DOTNET],
   },
   {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
-    description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://adventjs.dev",
-    image: "/projects/adventjs.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
-  },
+  title: "Juego Interactivo de Preguntas y Respuestas - Conexión Local",
+  description:
+    "Juego de preguntas y respuestas para dos jugadores, desarrollado con JavaScript, HTML y CSS. Utiliza Socket.io para la conexión local, garantizando una experiencia fluida y en tiempo real.",
+    github: "https://github.com/LRondinelli04/Licenciatura-en-Sistemas_APU/tree/main/Seminario%20de%20Lenguajes%20-%20JS/Trabajo_Final",
+    image: "/projects/TPFinalJS.jpg",
+    tags: [TAGS.JAVASCRIPT],
+}
 ]
 ---
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    PROJECTS.map(({ image, title, description, tags, github }) => (
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
   <div class="w-full md:w-1/2">
     <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
@@ -69,7 +76,7 @@ const PROJECTS = [
               <span
                 class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
               >
-                <tag.icon class="size-4" />
+                <tag.icon class="size-4 pb-1" />
                 {tag.name}
               </span>
             </li>
@@ -83,12 +90,6 @@ const PROJECTS = [
               <GitHub class="size-6" />
               Code
               
-            </LinkButton>
-          )}
-          {link && (
-            <LinkButton href={link}>
-              <Link class="size-4" />
-              Preview
             </LinkButton>
           )}
         </footer>
