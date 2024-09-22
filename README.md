@@ -30,7 +30,7 @@ Este repositorio contiene mi portafolio personal, donde presento una colección 
    npm start
    ```
 
-4. Abrir en el navegador: Abre tu navegador web y navega a `http://localhost:[RedLocalDisponible]` para ver el portafolio en ejecución.
+4. Abrir en el navegador: Abre tu navegador web y navega a `http://localhost:[puerto_disponible]` para ver el portafolio en ejecución.
 
 ## Contacto
 
