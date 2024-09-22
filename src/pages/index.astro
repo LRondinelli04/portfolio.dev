@@ -10,6 +10,8 @@ import Projects from "@/components/Projects.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
 import Hero from "@/components/Hero.astro"
 import TitleSection from "@/components/TitleSection.astro"
+import Certifications from "@/components/Certifications.astro"
+import CertificationsIcon from "@/components/icons/CertificationsIcon.astro"
 ---
 
 <Layout
@@ -38,6 +40,15 @@ import TitleSection from "@/components/TitleSection.astro"
       </TitleSection>
       <Projects />
     </SectionContainer>
+
+    <SectionContainer id="certificaciones">
+      <TitleSection>
+        <CertificationsIcon class="size-7" />
+        Certificaciones
+      </TitleSection>
+      <Certifications />
+    </SectionContainer>
+
     <!-- Agregar capacidades y/o conocimientos como lenguajes aprendidos -->
     <SectionContainer id="sobre-mi">
       <TitleSection>

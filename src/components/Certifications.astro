@@ -1,0 +1,43 @@
+---
+import CertificationsComponent from '../components/CertificationsComponent.jsx';
+
+const CERTIFICATIONS = [
+  {
+    title: "Certificación en Desarrollo Web",
+    issuer: "EducacionIT",
+    date: "Junio 2023",
+    description: "Certificación obtenida tras completar el curso de Desarrollo Web Front-End.",
+    image: "/projects/ITResto.jpg",
+    certificateLink: "https://www.educacionit.com/certificado/12345",
+    linkedinLink: "https://www.linkedin.com/posts/tu-usuario_certificacion-en-desarrollo-web-activity-12345",
+    subCertifications: [
+      {
+        title: "Curso de HTML y CSS",
+        issuer: "EducacionIT",
+        date: "Enero 2023",
+        image: "/projects/ITResto.jpg",
+        certificateLink: "https://www.educacionit.com/certificado/67890",
+        linkedinLink: "https://www.linkedin.com/posts/tu-usuario_certificacion-en-desarrollo-web-activity-12345",
+      },
+      {
+        title: "Curso de JavaScript Básico",
+        date: "Febrero 2023",
+        image: "/projects/ITResto.jpg",
+        certificateLink: "https://www.educacionit.com/certificado/11223",
+      },
+    ]
+  },
+  {
+    title: "Certificación en JavaScript Avanzado",
+    issuer: "Platzi",
+    date: "Marzo 2023",
+    description: "Certificación obtenida tras completar el curso de JavaScript Avanzado.",
+    image: "/projects/ITResto.jpg",
+    certificateLink: "https://platzi.com/certificado/67890",
+    linkedinLink: "https://www.linkedin.com/posts/tu-usuario_certificacion-en-javascript-avanzado-activity-67890",
+  },
+];
+---
+
+<!-- Renderizar el componente React con las certificaciones -->
+<CertificationsComponent certifications={CERTIFICATIONS} />
