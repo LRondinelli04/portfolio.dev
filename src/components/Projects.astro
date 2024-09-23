@@ -1,16 +1,16 @@
 ---
-import GitHub from "./icons/GitHub.astro"
-import LinkButton from "./LinkButton.astro"
-import JavaScript from "./icons/JavaScript.astro"
-import Angular from "./icons/Angular.astro"
-import DotNet from "./icons/DotNet.astro"
-import Html from "./icons/Html.astro"
-import Css from "./icons/Css.astro"
-import Bootstrap from "./icons/Bootstrap.astro"
-import Typescript from "./icons/Typescript.astro"
-import Csharp from "./icons/Csharp.astro"
-import Link from "./icons/Link.astro"
-import Scss from "./icons/Scss.astro"
+import GitHub from "./icons/GitHub.astro";
+import LinkButton from "./LinkButton.astro";
+import JavaScript from "./icons/JavaScript.astro";
+import Angular from "./icons/Angular.astro";
+import DotNet from "./icons/DotNet.astro";
+import Html from "./icons/Html.astro";
+import Css from "./icons/Css.astro";
+import Bootstrap from "./icons/Bootstrap.astro";
+import Typescript from "./icons/Typescript.astro";
+import Csharp from "./icons/Csharp.astro";
+import Link from "./icons/Link.astro";
+import Scss from "./icons/Scss.astro";
 
 const TAGS = {
   JAVASCRIPT: {
@@ -58,35 +58,43 @@ const TAGS = {
     class: "bg-[#c6538c] text-white",
     icon: Scss,
   },
-}
+};
 
 const PROJECTS = [
   {
     title: "Gestor de Tarjetas de Crédito - Validador y Administrador",
-    description: 
-    "Aplicación web para gestionar y validar tarjetas de crédito, desarrollada con Angular y .NET Core 6. Ofrece una interfaz intuitiva y almacena datos de manera segura.",
+    description:
+      "Aplicación web para gestionar y validar tarjetas de crédito, desarrollada con Angular y .NET Core 6. Ofrece una interfaz intuitiva y almacena datos de manera segura.",
     github: "https://github.com/LRondinelli04/Gestor-TarjetasCredito",
     image: "/projects/Proyecto-TarjetaDeCredito.jpg",
-    tags: [TAGS.ANGULAR, TAGS.DOTNET, TAGS.TYPESCRIPT, TAGS.CSHARP, TAGS.HTML, TAGS.CSS, TAGS.BOOTSTRAP],
+    tags: [
+      TAGS.ANGULAR,
+      TAGS.DOTNET,
+      TAGS.TYPESCRIPT,
+      TAGS.CSHARP,
+      TAGS.HTML,
+      TAGS.CSS,
+      TAGS.BOOTSTRAP,
+    ],
   },
   {
     title: "Juego Interactivo de Preguntas y Respuestas - Conexión Local",
-    description: 
-    "Juego interactivo para dos jugadores, diseñado con JavaScript, HTML y CSS, que utiliza Socket.io para establecer una conexión local. Esta implementación garantiza una experiencia de juego fluida y en tiempo real, fomentando la competencia y la diversión entre los jugadores.",
+    description:
+      "Juego interactivo para dos jugadores, diseñado con JavaScript, HTML y CSS, que utiliza Socket.io para establecer una conexión local. Esta implementación garantiza una experiencia de juego fluida y en tiempo real, fomentando la competencia y la diversión entre los jugadores.",
     github: "https://github.com/LRondinelli04/Preguntas-y-Respuestas",
     image: "/projects/TPFinalJS.jpg",
     tags: [TAGS.JAVASCRIPT, TAGS.HTML, TAGS.CSS, TAGS.BOOTSTRAP],
   },
   {
     title: "IT Resto - Página Responsive de Restaurante",
-    description: 
+    description:
       "Página web responsive para un restaurante, que permite visualizar promociones, menú, información de contacto y un formulario para realizar pedidos de delivery. Desarrollada con HTML, CSS, SCSS y JavaScript para ofrecer una experiencia de usuario atractiva y funcional en cualquier dispositivo.",
     github: "https://github.com/LRondinelli04/IT_Resto",
     link: "https://it-resto.vercel.app/",
     image: "/projects/ITResto.jpg",
     tags: [TAGS.HTML, TAGS.CSS, TAGS.SCSS, TAGS.JAVASCRIPT],
-  }
-]
+  },
+];
 ---
 
 <div class="flex flex-col gap-y-16">
@@ -95,7 +103,12 @@ const PROJECTS = [
       <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
         <div class="w-full md:w-1/2">
           <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-            <img alt={title} class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+            <img
+              alt={title}
+              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+              loading="lazy"
+              src={image}
+            />
           </div>
         </div>
 
@@ -126,13 +139,13 @@ const PROJECTS = [
                 Code
               </LinkButton>
             )}
-            
+
             {link && (
-            <LinkButton href={link}>
-              <Link class="size-4" />
-              Preview
-            </LinkButton>
-          )}
+              <LinkButton href={link}>
+                <Link class="size-4" />
+                Preview
+              </LinkButton>
+            )}
           </footer>
         </div>
       </article>
