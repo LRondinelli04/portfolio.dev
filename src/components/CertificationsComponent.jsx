@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import LinkedInIcon from "@/components/LinkedInIcon";
-import CertificationsIcon from "@/components/CertificationsIcon";
+import LinkedInIcon from "@/components/icons/LinkedinIcon";
+import CertificationsIcon from "@/components/icons/CertificationsIcon";
 import SocialPill from "@/components/SocialPill";
 
 const CertificationsComponent = ({ certifications }) => {

@@ -1,6 +1,8 @@
-<svg 
-    {...Astro.props} 
-    xmlns="http://www.w3.org/2000/svg" 
+import React from 'react';
+
+const LinkedInIcon = ({ className }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
     class="icon icon-tabler icon-tabler-brand-linkedin" 
     width="24" 
     height="24" 
@@ -16,4 +18,7 @@
     <path d="M8 8l0 .01" />
     <path d="M12 16l0 -5" />
     <path d="M16 16v-3a2 2 0 0 0 -4 0" />
-</svg>
+  </svg>
+);
+
+export default LinkedInIcon;
