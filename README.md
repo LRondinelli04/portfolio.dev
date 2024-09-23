@@ -25,12 +25,17 @@ Este repositorio contiene mi portafolio personal, donde presento una colección 
    npm install
    ```
 
-3. Iniciar el servidor de desarrollo: Una vez que las dependencias estén instaladas, inicia el servidor de desarrollo con el siguiente comando:
+3. Intalar dependencias de React
+```sh
+   npm install react
+   ```
+
+4. Iniciar el servidor de desarrollo: Una vez que las dependencias estén instaladas, inicia el servidor de desarrollo con el siguiente comando:
 ```sh
    npm start
    ```
 
-4. Abrir en el navegador: Abre tu navegador web y navega a `http://localhost:[puerto_disponible]` para ver el portafolio en ejecución.
+5. Abrir en el navegador: Abre tu navegador web y navega a `http://localhost:[puerto_disponible]` para ver el portafolio en ejecución.
 
 ## Contacto
 
