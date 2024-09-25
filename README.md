@@ -1,18 +1,18 @@
-# Portafolio Personal de LRondinelli04
+# Portfolio Personal de LRondinelli04
 
 ## Descripción
 
-Este repositorio contiene mi portafolio personal, donde presento una colección de proyectos y experiencias que reflejan mis habilidades y conocimientos en desarrollo de software. Mi objetivo es resaltar mi crecimiento como desarrollador y mi pasión por resolver problemas a través de la tecnología.
+Este repositorio contiene mi portfolio personal, donde presento una colección de proyectos y experiencias que reflejan mis habilidades y conocimientos en desarrollo de software. Mi objetivo es resaltar mi crecimiento como desarrollador y mi pasión por resolver problemas a través de la tecnología.
 
 ## Estructura del Repositorio
 
-- **src/**: Código fuente del portafolio, incluyendo componentes, estilos y configuraciones.
-- **public/**: Archivos estáticos como imágenes y otros recursos utilizados en el portafolio.
+- **src/**: Código fuente del portfolio, incluyendo componentes, estilos y configuraciones.
+- **public/**: Archivos estáticos como imágenes y otros recursos utilizados en el portfolio.
 - **projects/**: Proyectos destacados, cada uno con su propia subcarpeta y archivos relacionados.
 
 
 ## Guía de Inicio
-### Para iniciar y ejecutar el portafolio en tu máquina local, sigue estos pasos:
+### Para iniciar y ejecutar el portfolio en tu máquina local, sigue estos pasos:
 
 1. Clonar el repositorio:
 ```sh
@@ -35,7 +35,7 @@ Este repositorio contiene mi portafolio personal, donde presento una colección 
    npm start
    ```
 
-5. Abrir en el navegador: Abre tu navegador web y navega a `http://localhost:[puerto_disponible]` para ver el portafolio en ejecución.
+5. Abrir en el navegador: Abre tu navegador web y navega a `http://localhost:[puerto_disponible]` para ver el portfolio en ejecución.
 
 ## Contacto
 
