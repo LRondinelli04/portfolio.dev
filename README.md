@@ -15,8 +15,6 @@ Este repositorio contiene mi portfolio personal, donde presento una colección d
 
 - **src/**: Código fuente del portfolio, incluyendo componentes, estilos y configuraciones.
 - **public/**: Archivos estáticos como imágenes y otros recursos utilizados en el portfolio.
-- **projects/**: Proyectos destacados, cada uno con su propia subcarpeta y archivos relacionados.
-
 
 ## Guía de Inicio
 ### Para iniciar y ejecutar el portfolio en tu máquina local, sigue estos pasos:
