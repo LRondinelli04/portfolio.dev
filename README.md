@@ -1,5 +1,12 @@
 # Portfolio Personal de LRondinelli04
 
+<div align="center">
+<a href="https://portfolio-dev-nine-pi.vercel.app/">
+<img src="./public/portfolio.jpg">
+</a>
+<p></p>
+</div>
+
 ## Descripción
 
 Este repositorio contiene mi portfolio personal, donde presento una colección de proyectos y experiencias que reflejan mis habilidades y conocimientos en desarrollo de software. Mi objetivo es resaltar mi crecimiento como desarrollador y mi pasión por resolver problemas a través de la tecnología.
