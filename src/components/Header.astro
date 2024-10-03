@@ -1,7 +1,15 @@
 ---
 import ThemeToggle from "./ThemeToggle.astro";
+import TitleSection from "./TitleSection.astro";
+import HomeIcon from "./icons/HomeIcon.astro";
 
 const navItems = [
+  {
+    title: "",
+    label: "inicio",
+    url: "/#inicio",
+    icon: HomeIcon,
+  },
   {
     title: "Experiencia",
     label: "experiencia",
@@ -30,23 +38,17 @@ const navItems = [
 ];
 ---
 
-<header
-  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
->
-  <nav
-    class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
-  >
-    {
-      navItems.map((link) => (
-        <a
-          class="relative block px-2 py-2 transition hover:text-blue-500 dark:hover:text-blue-500"
-          aria-label={link.label}
-          href={link.url}
-        >
-          {link.title}
-        </a>
-      ))
-    }
+<header class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2">
+  <nav class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center">
+    {navItems.map((link) => (
+      <a
+        class="relative block px-2 py-2 transition hover:text-blue-500 dark:hover:text-blue-500 flex items-center"
+        aria-label={link.label}
+        href={link.url}
+      >
+        {link.icon ? <link.icon class="inline-block w-6 h-6 " /> : link.title}
+      </a>
+    ))}
     <ThemeToggle />
   </nav>
 </header>
@@ -57,7 +59,7 @@ const navItems = [
     const navItems = document.querySelectorAll("header nav a");
 
     const callback = (entries: any[]) => {
-      entries.forEach((entry) => {
+      entries.forEach((entry: { isIntersecting: any; target: { id: string | null; }; }) => {
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
             if (item.getAttribute("aria-label") == entry.target.id) {
@@ -113,7 +115,7 @@ const navItems = [
     }
   }
 
-  /* reposnive nav para mobile */
+  /* responsive nav para mobile */
   @media (max-width: 675px) {
     nav {
       margin-right: 1.5rem;
