@@ -11,20 +11,9 @@ import Csharp from "./icons/Csharp.astro";
 import Java from "./icons/Java.astro";
 import Pascal from "./icons/Pascal.astro";
 import Git from "./icons/Git.astro";
+import GitHub from "./icons/GitHub.astro";
 
-const TAGS = {
-  JAVASCRIPT: {
-    name: "JavaScript",
-    icon: JavaScript,
-  },
-  ANGULAR: {
-    name: "Angular",
-    icon: Angular,
-  },
-  DOTNET: {
-    name: ".NET",
-    icon: DotNet,
-  },
+const FRONTEND_TAGS = {
   HTML: {
     name: "HTML",
     icon: Html,
@@ -33,13 +22,28 @@ const TAGS = {
     name: "CSS",
     icon: Css,
   },
-  SCSS: {
-    name: "SCSS",
-    icon: Scss,
+  JAVASCRIPT: {
+    name: "JavaScript",
+    icon: JavaScript,
   },
   TYPESCRIPT: {
     name: "TypeScript",
     icon: Typescript,
+  },
+  ANGULAR: {
+    name: "Angular",
+    icon: Angular,
+  },
+  SCSS: {
+    name: "SCSS",
+    icon: Scss,
+  },
+};
+
+const BACKEND_TAGS = {
+  DOTNET: {
+    name: ".NET",
+    icon: DotNet,
   },
   CSHARP: {
     name: "C#",
@@ -49,37 +53,89 @@ const TAGS = {
     name: "Java",
     icon: Java,
   },
-  PASCAL: {
-    name: "Pascal",
-    icon: Pascal,
-  },
+};
+
+const TOOL_TAGS = {
   GIT: {
     name: "Git",
     icon: Git,
   },
+  GITHUB: {
+    name: "GitHub",
+    icon: GitHub,
+  },
 };
 
-const TECNOLOGIAS = Object.values(TAGS);
+const FRONTEND_TECHNOLOGIES = Object.values(FRONTEND_TAGS);
+const BACKEND_TECHNOLOGIES = Object.values(BACKEND_TAGS);
+const TOOL_TECHNOLOGIES = Object.values(TOOL_TAGS);
 ---
 
-<!-- Agregar los TAGS con sus iconos correspondientes -->
-<div class="flex flex-wrap justify-center gap-4 relative">
-  {
-    TECNOLOGIAS.map(({ name, icon: Icon }) => (
-      <div class="group relative flex items-center justify-center transition-transform duration-300 bg-gray-100 border border-gray-300 rounded-full p-4 shadow-lg hover:scale-110 hover:shadow-xl dark:bg-gray-800 dark:border-gray-600 dark:hover:bg-gray-700">
-        <Icon class="size-6" />
-        <div class="absolute bottom-0 flex-col items-center hidden mb-6 group-hover:flex">
-          <span class="relative z-10 mb-5 p-2 mb-5 text-xs leading-none text-white whitespace-no-wrap bg-black shadow-lg rounded-md">
-            {name}
-          </span>
+<!-- Sección de Front-end -->
+<div class="mb-10">
+  <h2 class="text-2xl font-bold text-center mb-4">Front-end</h2>
+  <div class="flex flex-wrap justify-center gap-6">
+    {
+      FRONTEND_TECHNOLOGIES.map(({ name, icon: Icon }) => (
+        <div class="group relative flex items-center justify-center transition-transform duration-300 bg-gray-100 border border-gray-300 rounded-full p-8 shadow-lg hover:scale-110 hover:shadow-xl dark:bg-gray-800 dark:border-gray-600 dark:hover:bg-gray-700">
+          <Icon class="size-8" />
+          <div class="absolute bottom-0 flex-col items-center hidden mb-6 group-hover:flex">
+            <span class="nameSpace relative z-10 mb-5 p-2 text-xs leading-none text-white whitespace-no-wrap bg-black shadow-lg rounded-md">
+              {name}
+            </span>
+          </div>
         </div>
-      </div>
-    ))
-  }
+      ))
+    }
+  </div>
+</div>
+
+<!-- Sección de Back-end -->
+<div class="mb-10">
+  <h2 class="text-2xl font-bold text-center mb-4">Back-end</h2>
+  <div class="flex flex-wrap justify-center gap-6">
+    {
+      BACKEND_TECHNOLOGIES.map(({ name, icon: Icon }) => (
+        <div class="group relative flex items-center justify-center transition-transform duration-300 bg-gray-100 border border-gray-300 rounded-full p-8 shadow-lg hover:scale-110 hover:shadow-xl dark:bg-gray-800 dark:border-gray-600 dark:hover:bg-gray-700">
+          <Icon class="size-8" />
+          <div class="absolute bottom-0 flex-col items-center hidden mb-6 group-hover:flex">
+            <span class="nameSpace relative z-10 mb-5 p-2 text-xs leading-none text-white whitespace-no-wrap bg-black shadow-lg rounded-md">
+              {name}
+            </span>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<!-- Sección de Herramientas -->
+<div>
+  <h2 class="text-2xl font-bold text-center mb-4">Herramientas</h2>
+  <div class="flex flex-wrap justify-center gap-6">
+    {
+      TOOL_TECHNOLOGIES.map(({ name, icon: Icon }) => (
+        <div class="group relative flex items-center justify-center transition-transform duration-300 bg-gray-100 border border-gray-300 rounded-full p-8 shadow-lg hover:scale-110 hover:shadow-xl dark:bg-gray-800 dark:border-gray-600 dark:hover:bg-gray-700">
+          <Icon class="size-8" />
+          <div class="absolute bottom-0 flex-col items-center hidden mb-6 group-hover:flex">
+            <span class="nameSpace relative z-10 mb-5 p-2 text-xs leading-none text-white whitespace-no-wrap bg-black shadow-lg rounded-md">
+              {name}
+            </span>
+          </div>
+        </div>
+      ))
+    }
+  </div>
 </div>
 
 <style>
-  .group-hover\:flex:hover .group-hover\:flex {
-    display: flex;
+  /* Estilo para los iconos */
+  .size-8 {
+    width: 30px; /* Ajusta según necesites */
+    height: 30px; /* Ajusta según necesites */
+  }
+
+  .nameSpace {
+    top: -40px;
   }
 </style>
