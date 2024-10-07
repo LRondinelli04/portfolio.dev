@@ -12,6 +12,8 @@ import Hero from "@/components/Hero.astro";
 import TitleSection from "@/components/TitleSection.astro";
 import Certifications from "@/components/Studies.astro";
 import CertificationsIcon from "@/components/icons/StudiesIcon.astro";
+import ProjectIcon from "@/components/icons/ProjectIcon.astro";
+import Technology from "@/components/Technology.astro";
 ---
 
 <Layout
@@ -24,6 +26,15 @@ import CertificationsIcon from "@/components/icons/StudiesIcon.astro";
     </SectionContainer>
   </main>
   <div class="space-y-24">
+
+    <SectionContainer id="estudios">
+      <TitleSection>
+        <CertificationsIcon class="size-7" />
+        Estudios
+      </TitleSection>
+      <Certifications />
+    </SectionContainer>
+
     <SectionContainer id="experiencia">
       <TitleSection>
         <Briefcase class="size-8" />
@@ -32,20 +43,20 @@ import CertificationsIcon from "@/components/icons/StudiesIcon.astro";
       <Experience />
     </SectionContainer>
 
-    <SectionContainer id="proyectos">
+    <SectionContainer id="tecnologias">
       <TitleSection>
         <CodeIcon class="size-7" />
+        Tecnologías
+      </TitleSection>
+      <Technology />
+    </SectionContainer>
+
+    <SectionContainer id="proyectos">
+      <TitleSection>
+        <ProjectIcon class="size-7" />
         Proyectos
       </TitleSection>
       <Projects />
-    </SectionContainer>
-
-    <SectionContainer id="estudios">
-      <TitleSection>
-        <CertificationsIcon class="size-7" />
-        Estudios
-      </TitleSection>
-      <Certifications />
     </SectionContainer>
 
     <!-- Agregar capacidades y/o conocimientos como lenguajes aprendidos -->
