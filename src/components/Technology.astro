@@ -1,0 +1,85 @@
+---
+import SocialPill from "@/components/SocialPill";
+import JavaScript from "./icons/JavaScript.astro";
+import Angular from "./icons/Angular.astro";
+import DotNet from "./icons/DotNet.astro";
+import Html from "./icons/Html.astro";
+import Css from "./icons/Css.astro";
+import Scss from "./icons/Scss.astro";
+import Typescript from "./icons/Typescript.astro";
+import Csharp from "./icons/Csharp.astro";
+import Java from "./icons/Java.astro";
+import Pascal from "./icons/Pascal.astro";
+import Git from "./icons/Git.astro";
+
+const TAGS = {
+  JAVASCRIPT: {
+    name: "JavaScript",
+    icon: JavaScript,
+  },
+  ANGULAR: {
+    name: "Angular",
+    icon: Angular,
+  },
+  DOTNET: {
+    name: ".NET",
+    icon: DotNet,
+  },
+  HTML: {
+    name: "HTML",
+    icon: Html,
+  },
+  CSS: {
+    name: "CSS",
+    icon: Css,
+  },
+  SCSS: {
+    name: "SCSS",
+    icon: Scss,
+  },
+  TYPESCRIPT: {
+    name: "TypeScript",
+    icon: Typescript,
+  },
+  CSHARP: {
+    name: "C#",
+    icon: Csharp,
+  },
+  JAVA: {
+    name: "Java",
+    icon: Java,
+  },
+  PASCAL: {
+    name: "Pascal",
+    icon: Pascal,
+  },
+  GIT: {
+    name: "Git",
+    icon: Git,
+  },
+};
+
+const TECNOLOGIAS = Object.values(TAGS);
+---
+
+<!-- Agregar los TAGS con sus iconos correspondientes -->
+<div class="flex flex-wrap justify-center gap-4 relative">
+  {
+    TECNOLOGIAS.map(({ name, icon: Icon }) => (
+      <div class="group relative flex items-center justify-center transition-transform duration-300 bg-gray-100 border border-gray-300 rounded-full p-4 shadow-lg hover:scale-110 hover:shadow-xl dark:bg-gray-800 dark:border-gray-600 dark:hover:bg-gray-700">
+        <Icon class="size-6" />
+        <div class="absolute bottom-0 flex-col items-center hidden mb-6 group-hover:flex">
+          <span class="relative z-10 mb-5 p-2 mb-5 text-xs leading-none text-white whitespace-no-wrap bg-black shadow-lg rounded-md">
+            {name}
+          </span>
+        </div>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .group-hover\:flex:hover .group-hover\:flex {
+    display: flex;
+  }
+</style>
