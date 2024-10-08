@@ -1,13 +1,13 @@
 ---
-import GitHub from "./icons/GitHub.astro";
+/* import GitHub from "./icons/GitHub.astro";
 import CvIcon from "./icons/CvIcon.astro";
 import LinkedIn from "./icons/LinkedIn.astro";
-import Email from "./icons/email.astro";
+import Email from "./icons/email.astro"; */
 
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="bg-gray-800 text-white py-8">
+<footer class="bg-gray-800 text-white py-8 mt-8">
   <div
     class="container mx-auto flex flex-col md:flex-row justify-between items-center"
   >
@@ -23,40 +23,52 @@ const currentYear = new Date().getFullYear();
         <a
           id="contacto"
           href="mailto:lrondinelli2004@gmail.com"
-          class="hover:underline"
+          class="hover:underline flex items-center transform transition-transform duration-300 hover:scale-110"
         >
-        <Email class="w-5 h-5 mr-1" />
-        Contacto
+          <!-- <Email class="w-5 h-5 mr-1" /> -->
+          Contacto
         </a>
       </li>
       <li class="mb-2 md:mb-0 md:mr-4">
         <a
           href="https://github.com/LRondinelli04"
-          class="hover:underline flex items-center"
+          class="hover:underline flex items-center transform transition-transform duration-300 hover:scale-110"
         >
-          <GitHub class="w-5 h-5 mr-1" />
+          <!-- <GitHub class="w-5 h-5 mr-1" /> -->
           GitHub
         </a>
       </li>
       <li class="mb-2 md:mb-0 md:mr-4">
         <a
-          href="https://www.linkedin.com/in/tu-perfil"
-          class="hover:underline flex items-center"
+          href="https://www.linkedin.com/in/lucas-rondinelli-9b83a9267"
+          class="hover:underline flex items-center transform transition-transform duration-300 hover:scale-110"
         >
-          <LinkedIn class="w-5 h-5 mr-1" />
+          <!-- <LinkedIn class="w-5 h-5 mr-1" /> -->
           LinkedIn
         </a>
       </li>
       <li class="mb-2 md:mb-0">
         <a
           href="./pdf/pdfPrueba.pdf"
-          class="hover:underline flex items-center"
-          download
+          class="hover:underline flex items-center transform transition-transform duration-300 hover:scale-110"
         >
-          <CvIcon class="w-5 h-5 mr-1" />
-          Descargar CV
+          <!-- <CvIcon class="w-5 h-5 mr-1" /> -->
+          Curriculum
         </a>
       </li>
     </ul>
   </div>
 </footer>
+<style>
+  /* responsive para mobiles */
+  @media (max-width: 675px) {
+    footer{
+      width: 100%;
+      padding: 0;
+    }
+
+    .container{
+      padding: 0.5rem;
+    }
+  }
+</style>
