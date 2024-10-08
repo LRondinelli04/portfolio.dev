@@ -50,7 +50,7 @@ const CertificationsComponent = ({ certifications }) => {
             <p className="mt-2 text-gray-700 dark:text-gray-400">
               {certification.description}
             </p>
-            <div className="flex items-start justify-start mt-4 gap-x-4">
+            <div className="flex flex-col md:flex-row items-start justify-start mt-4 gap-x-4 gap-y-4">
               <SocialPill
                 href={certification.certificateLink}
                 target="_blank"
