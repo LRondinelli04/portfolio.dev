@@ -1,30 +1,61 @@
 ---
+import GitHub from "./icons/GitHub.astro";
+import CvIcon from "./icons/CvIcon.astro";
+import LinkedIn from "./icons/LinkedIn.astro";
+import Email from "./icons/email.astro";
+
 const currentYear = new Date().getFullYear();
 ---
 
-<footer
-  class="opacity-80 m-4 min-[375px]:pl-4 md:pl-0 mt-16 w-full mx-auto container lg:max-w-4xl md:max-w-2xl mb-10 flex justify-center"
->
+<footer class="bg-gray-800 text-white py-8">
   <div
-    class="rounded-lg w-full max-w-screen-xl mx-auto md:flex md:items-center md:justify-between py-4"
+    class="container mx-auto flex flex-col md:flex-row justify-between items-center"
   >
-    <!-- <span class="text-sm sm:text-center text-zinc-800/90 dark:text-zinc-200/90"
-      >© {currentYear}
-      <a href="https://midu.dev/" class="hover:underline">midudev</a>. Casi
-      todos los derechos reservados
-    </span> -->
-    <ul
-      class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-white/90 sm:mt-0"
-    >
-      <li>
-        <a href="/#sobre-mi" class="hover:underline me-4 md:me-6">Sobre mí</a>
-      </li>
-      <li>
+    <div class="text-center md:text-left mb-4 md:mb-0">
+      <span class="text-sm">
+        © {currentYear}
+        <a class="hover:underline" href="#">Lucas Rondinelli</a>. Todos los
+        derechos reservados.
+      </span>
+    </div>
+    <ul class="flex flex-col md:flex-row items-center text-sm font-medium">
+      <li class="mb-2 md:mb-0 md:mr-4">
         <a
           id="contacto"
           href="mailto:lrondinelli2004@gmail.com"
-          class="hover:underline">Contacto</a
+          class="hover:underline"
         >
+        <Email class="w-5 h-5 mr-1" />
+        Contacto
+        </a>
+      </li>
+      <li class="mb-2 md:mb-0 md:mr-4">
+        <a
+          href="https://github.com/LRondinelli04"
+          class="hover:underline flex items-center"
+        >
+          <GitHub class="w-5 h-5 mr-1" />
+          GitHub
+        </a>
+      </li>
+      <li class="mb-2 md:mb-0 md:mr-4">
+        <a
+          href="https://www.linkedin.com/in/tu-perfil"
+          class="hover:underline flex items-center"
+        >
+          <LinkedIn class="w-5 h-5 mr-1" />
+          LinkedIn
+        </a>
+      </li>
+      <li class="mb-2 md:mb-0">
+        <a
+          href="./pdf/pdfPrueba.pdf"
+          class="hover:underline flex items-center"
+          download
+        >
+          <CvIcon class="w-5 h-5 mr-1" />
+          Descargar CV
+        </a>
       </li>
     </ul>
   </div>
