@@ -43,28 +43,120 @@ const navItems = [
 ];
 ---
 
-<header class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2">
-  <nav class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center">
-    {navItems.map((link) => (
-      <a
-        class="relative block px-2 py-2 transition hover:text-blue-500 dark:hover:text-blue-500 flex items-center"
-        aria-label={link.label}
-        href={link.url}
-      >
-        {link.icon ? <link.icon class="inline-block w-6 h-6 " /> : link.title}
-      </a>
-    ))}
+<header
+  id="header"
+  class="fixed top-0 z-10 flex items-center justify-between w-full mx-auto mt-2"
+>
+  <nav
+    class="hidden md:flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
+  >
+    {
+      navItems.map((link) => (
+        <a
+          class="relative block px-2 py-2 transition hover:text-blue-500 dark:hover:text-blue-500 flex items-center"
+          aria-label={link.label}
+          href={link.url}
+        >
+          {link.icon ? <link.icon class="inline-block w-6 h-6 " /> : link.title}
+        </a>
+      ))
+    }
     <ThemeToggle />
   </nav>
+
+  <!-- Icono del menú hamburguesa visible solo en móviles -->
+  <button class="block md:hidden p-4" id="menu-toggle">
+    <!-- Ícono de menú hamburguesa -->
+    <svg
+      class="w-6 h-6 text-gray-600 dark:text-gray-200"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+  </button>
+
+  <!-- Menú desplegable para móviles -->
+  <div
+    id="mobile-menu"
+    class="hidden flex-col items-center justify-center space-y-4 bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-200 p-4 absolute top-12 left-0 w-full transition-all duration-500 ease-in-out transform -translate-y-full"
+  >
+    {
+      navItems.map((link) => (
+        <a
+          class="block px-4 py-2 transition hover:text-blue-500 dark:hover:text-blue-500 flex items-center"
+          aria-label={link.label}
+          href={link.url}
+        >
+          {link.icon ? <link.icon class="inline-block w-6 h-6 mr-2" /> : null}
+          {link.title}
+        </a>
+      ))
+    }
+    <ThemeToggle />
+  </div>
 </header>
 
 <script>
   document.addEventListener("astro:page-load", () => {
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const header = document.getElementById("header");
+
+    // Abrir/cerrar el menú en pantallas pequeñas
+    menuToggle.addEventListener("click", () => {
+      if (mobileMenu.classList.contains("hidden")) {
+        mobileMenu.classList.remove("hidden");
+        setTimeout(() => {
+          mobileMenu.classList.remove("-translate-y-full");
+          mobileMenu.classList.add("translate-y-0");
+        }, 10); // Pequeño retraso para permitir que el navegador registre la eliminación de la clase "hidden"
+      } else {
+        mobileMenu.classList.remove("translate-y-0");
+        mobileMenu.classList.add("-translate-y-full");
+        setTimeout(() => {
+          mobileMenu.classList.add("hidden");
+        }, 500); // Duración de la transición
+      }
+    });
+
+    // Ocultar el menú móvil cuando la pantalla cambia de tamaño
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 768) {
+        if (mobileMenu) {
+          mobileMenu.classList.add("hidden");
+          mobileMenu.classList.remove("translate-y-0");
+          mobileMenu.classList.add("-translate-y-full");
+        }
+      }
+
+      /* agregarle estilos al header del menu hamburguesa cuando el width es menor a 768px*/
+      if (window.innerWidth < 768) {
+        header.classList.add("bg-white", "dark:bg-gray-800");
+
+        header?.classList.remove("mt-2");
+        header?.classList.add("mt-0");
+
+      } else {
+        header.classList.remove("bg-white", "dark:bg-gray-800");
+
+        header?.classList.add("mt-2");
+        header?.classList.remove("mt-0");
+      }
+    });
+
+    // Funcionalidad de intersección para el menú
     const sections = document.querySelectorAll("section");
     const navItems = document.querySelectorAll("header nav a");
 
-    const callback = (entries: any[]) => {
-      entries.forEach((entry: { isIntersecting: any; target: { id: string | null; }; }) => {
+    const callback = (entries) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
             if (item.getAttribute("aria-label") == entry.target.id) {
@@ -86,17 +178,6 @@ const navItems = [
     sections.forEach((section) => {
       observer.observe(section);
     });
-
-    // Cleanup function
-    document.onvisibilitychange = () => {
-      if (document.visibilityState === "hidden") {
-        observer.disconnect();
-      } else {
-        sections.forEach((section) => {
-          observer.observe(section);
-        });
-      }
-    };
   });
 </script>
 
@@ -118,5 +199,34 @@ const navItems = [
     to {
       @apply shadow-lg ring-1 backdrop-blur ring-white/10;
     }
+  }
+
+  /* Ocultar el menú hamburguesa por defecto y mostrar en pantallas pequeñas */
+  @media (max-width: 768px) {
+    nav {
+      display: none; /* Ocultar el menú de escritorio en pantallas pequeñas */
+    }
+
+    #mobile-menu {
+      display: flex; /* Mostrar el menú móvil */
+    }
+  }
+
+  /* Asegurar que el menú móvil esté oculto inicialmente */
+  #mobile-menu.hidden {
+    display: none;
+  }
+
+  /* Transición para el menú móvil */
+  #mobile-menu {
+    transition: transform 0.5s ease-in-out;
+  }
+
+  #mobile-menu.translate-y-0 {
+    transform: translateY(0);
+  }
+
+  #mobile-menu.-translate-y-full {
+    transform: translateY(-100%);
   }
 </style>
