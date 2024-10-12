@@ -98,6 +98,18 @@ const THEMES = ["Light", "Dark", "System"];
     document.documentElement.classList[isDark ? "add" : "remove"]("dark");
   };
 
+  const setDefaultThemeForMobile = () => {
+    if (window.innerWidth < 768) {
+      const systemPrefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      document.documentElement.classList[systemPrefersDark ? "add" : "remove"](
+        "dark"
+      );
+    }
+  };
+
+  setDefaultThemeForMobile();
   updateTheme();
 
   document.addEventListener("click", () => themesMenu.classList.remove("open"));
