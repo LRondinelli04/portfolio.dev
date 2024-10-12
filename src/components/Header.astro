@@ -48,13 +48,13 @@ const navItems = [
   class="fixed top-0 z-10 flex items-center justify-between w-full mx-auto mt-2"
 >
   <nav
-    class="hidden md:flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
+    class="hidden md:flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center headerPc"
   >
     {
       navItems.map((link) => (
         <a
           class="relative block px-2 py-2 transition hover:text-blue-500 dark:hover:text-blue-500 flex items-center"
-          aria-label={link.label}
+          aria={link.label}
           href={link.url}
         >
           {link.icon ? <link.icon class="inline-block w-6 h-6 " /> : link.title}
@@ -199,6 +199,14 @@ const navItems = [
     to {
       @apply shadow-lg ring-1 backdrop-blur ring-white/10;
     }
+  }
+
+  .headerPc {
+    /* Centrar el navbar horizontalmente */
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   /* Ocultar el menú hamburguesa por defecto y mostrar en pantallas pequeñas */
