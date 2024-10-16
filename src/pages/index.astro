@@ -14,6 +14,8 @@ import Certifications from "@/components/Studies.astro";
 import CertificationsIcon from "@/components/icons/StudiesIcon.astro";
 import ProjectIcon from "@/components/icons/ProjectIcon.astro";
 import Technology from "@/components/Technology.astro";
+import Repositories from "@/components/Repositories.astro";
+import RepoIco from "@/components/icons/Repository.astro";
 ---
 
 <Layout
@@ -26,7 +28,6 @@ import Technology from "@/components/Technology.astro";
     </SectionContainer>
   </main>
   <div class="space-y-24 pl-4 pr-4">
-
     <SectionContainer id="estudios">
       <TitleSection>
         <CertificationsIcon class="size-7" />
@@ -37,7 +38,7 @@ import Technology from "@/components/Technology.astro";
 
     <SectionContainer id="experiencia">
       <TitleSection>
-        <Briefcase class="size-8" />
+        <Briefcase class="size-7" />
         Experiencia laboral
       </TitleSection>
       <Experience />
@@ -59,10 +60,18 @@ import Technology from "@/components/Technology.astro";
       <Projects />
     </SectionContainer>
 
+    <SectionContainer id="repositorios">
+      <TitleSection>
+        <RepoIco class="size-7" />
+        Repositorios Principales
+      </TitleSection>
+      <Repositories />
+    </SectionContainer>
+
     <!-- Agregar capacidades y/o conocimientos como lenguajes aprendidos -->
     <SectionContainer id="sobre-mi">
       <TitleSection>
-        <ProfileCheck class="size-8" />
+        <ProfileCheck class="size-7" />
         Sobre mí
       </TitleSection>
       <AboutMe />
