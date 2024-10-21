@@ -8,9 +8,4 @@ import robotsTxt from "astro-robots-txt";
 export default defineConfig({
   integrations: [tailwind(), robotsTxt(), react()],
   site: "https://porfolio.dev/",
-  vite: {
-    ssr: {
-      noExternal: ["webcoreui"],
-    },
-  },
 });
