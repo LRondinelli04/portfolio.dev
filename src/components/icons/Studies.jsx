@@ -3,14 +3,13 @@ import React from "react";
 const CertificationsIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
     version="1.1"
     id="certification-icon"
     x="0px"
     y="0px"
     viewBox="0 0 469.333 469.333"
     style={{ enableBackground: "new 0 0 459 459" }}
-    xml:space="preserve"
+    xmlSpace="preserve"
     width="22"
     height="22"
     fill="currentColor"
