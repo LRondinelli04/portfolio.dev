@@ -1,7 +1,6 @@
 ---
 import GitHub from "./icons/GitHub.astro";
 import LinkButton from "./LinkButton.astro";
-import { Carousel } from "webcoreui/astro";
 
 const MAIN_REPOS = [
   {
@@ -33,30 +32,28 @@ const MAIN_REPOS = [
 
 <!-- Sección de Repositorios Principales -->
 <section class="mt-16">
-  <Carousel items={MAIN_REPOS.length} subText="Step {0} of {1}">
-    {
-      MAIN_REPOS.map(({ title, description, github }) => (
-        <li>
-          <div class="repo-card p-4 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md bg-white dark:bg-gray-800  flex flex-col justify-between">
-            <div>
-              <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-                {title}
-              </h3>
-              <p class="my-2 text-gray-600 dark:text-gray-300">{description}</p>
-            </div>
-            <div class="flex justify-end mt-auto">
-              <a href={github} class="btn btn-primary mt-4">
-                <LinkButton href={github}>
-                  <GitHub class="size-6" />
-                  Code
-                </LinkButton>
-              </a>
-            </div>
+  {
+    MAIN_REPOS.map(({ title, description, github }) => (
+      <li>
+        <div class="repo-card p-4 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md bg-white dark:bg-gray-800  flex flex-col justify-between">
+          <div>
+            <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+              {title}
+            </h3>
+            <p class="my-2 text-gray-600 dark:text-gray-300">{description}</p>
           </div>
-        </li>
-      ))
-    }
-  </Carousel>
+          <div class="flex justify-end mt-auto">
+            <a href={github} class="btn btn-primary mt-4">
+              <LinkButton href={github}>
+                <GitHub class="size-6" />
+                Code
+              </LinkButton>
+            </a>
+          </div>
+        </div>
+      </li>
+    ))
+  }
 </section>
 
 <style>
