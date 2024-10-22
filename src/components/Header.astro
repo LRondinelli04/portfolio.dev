@@ -109,7 +109,9 @@ const navItems = [
     const menuToggle = document.getElementById("menu-toggle");
     const mobileMenu = document.getElementById("mobile-menu");
     const header = document.getElementById("header");
-    const themeToggleContainer = document.getElementById("theme-toggle-container");
+    const themeToggleContainer = document.getElementById(
+      "theme-toggle-container"
+    );
 
     // Abrir/cerrar el menú en pantallas pequeñas
     menuToggle?.addEventListener("click", () => {
@@ -140,12 +142,12 @@ const navItems = [
 
       /* agregarle estilos al header del menu hamburguesa cuando el width es menor a 768px*/
       if (window.innerWidth < 768) {
-        header?.classList.add("bg-white", "dark:bg-gray-800");
+        header?.classList.add("bg-gray-300", "dark:bg-gray-800");
         header?.classList.remove("mt-2");
         header?.classList.add("mt-0");
         themeToggleContainer?.classList.add("hidden");
       } else {
-        header?.classList.remove("bg-white", "dark:bg-gray-800");
+        header?.classList.remove("bg-gray-300", "dark:bg-gray-800");
         header?.classList.add("mt-2");
         header?.classList.remove("mt-0");
         themeToggleContainer?.classList.remove("hidden");
@@ -154,7 +156,9 @@ const navItems = [
 
     // Aplicar el tema de color del sistema por defecto en pantallas menores a 768px
     if (window.innerWidth < 768) {
-      const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const prefersDarkScheme = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
       if (prefersDarkScheme) {
         document.documentElement.classList.add("dark");
       } else {
@@ -193,6 +197,14 @@ const navItems = [
 </script>
 
 <style>
+  #header {
+    z-index: 9999;
+  }
+
+  #mobile-menu {
+    @apply bg-gray-300 dark:bg-gray-800;
+  }
+
   nav {
     animation: nav-shadown 1s linear both;
     animation-timeline: scroll();
