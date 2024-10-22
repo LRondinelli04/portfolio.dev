@@ -1,7 +1,10 @@
 ---
+// Importaciones necesarias
 import GitHub from "./icons/GitHub.astro";
 import LinkButton from "./LinkButton.astro";
+import SocialPill from "./SocialPill.astro";
 
+// Repositorios principales
 const MAIN_REPOS = [
   {
     title: "Licenciatura en Sistemas - APU",
@@ -29,28 +32,26 @@ const MAIN_REPOS = [
 ];
 ---
 
-<!-- CAROUSEL CON TAILWIND https://www.penguinui.com/components/carousel -->
-
-<section class="mt-16">
-  <div id="controls-carousel" class="relative w-full" data-carousel="static">
-    <!-- Carousel wrapper -->
+<!-- Sección de Repositorios Principales -->
+<section id="carouselExample" class="carousel slide mt-16">
+  <div class="carousel-inner flex relative">
     {
       MAIN_REPOS.map(({ title, description, github }, index) => (
         <div
-          class={`hidden duration-700 ease-in-out ${index === 0 ? "block" : ""}`}
-          data-carousel-item
+          class={`carousel-item ${index === 0 ? "active" : ""}`}
+          style="width: 100%;"
         >
-          <div class="repo-card p-4 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md bg-white dark:bg-gray-800 flex flex-col justify-between">
+          <div class="repo-card p-4 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md bg-gray-100 dark:bg-gray-800 flex flex-col justify-between">
             <div>
-              <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100 text-center">
+              <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100 text-center underline">
                 {title}
               </h3>
-              <p class="my-2 text-gray-600 dark:text-gray-300 px-20">
+              <p class="my-2 text-gray-600 dark:text-gray-300 px-5">
                 {description}
               </p>
             </div>
-            <div class="flex justify-end mt-5">
-              <a href={github} class="btn btn-primary mt-4">
+            <div class="flex justify-end my-2">
+              <a href={github} class="btn btn-primary mt4">
                 <LinkButton href={github}>
                   <GitHub class="size-6" />
                   Code
@@ -61,118 +62,194 @@ const MAIN_REPOS = [
         </div>
       ))
     }
-    <!-- Slider indicators -->
-    <div
-      class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse"
-    >
-      {
-        MAIN_REPOS.map((_, index) => (
-          <button
-            type="button"
-            class="w-3 h-3 rounded-full"
-            aria-current={index === 0 ? "true" : "false"}
-            aria-label={`Slide ${index + 1}`}
-            data-carousel-slide-to={index}
-          />
-        ))
-      }
-    </div>
-    <!-- Slider controls -->
-    <button
-      type="button"
-      class="absolute top-1/2 left-0 z-30 flex items-center justify-center px-4 cursor-pointer group focus:outline-none transform -translate-y-1/2"
-      data-carousel-prev
-    >
+  </div>
+
+  <!-- Botones de navegación -->
+  <div class="carousel-controls flex justify-center mt-4">
+    <button class="carousel-control-prev" type="button">
       <span
-        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-400 dark:bg-white-800 dark:hover:bg-gray-100 group-hover:bg-gray-700 dark:group-hover:bg-white-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none transform transition-transform duration-300 hover:scale-110"
+        class="carousel-control-prev-icon inline-flex items-center justify-center gap-2 px-4 py-1 text-gray-800 transition bg-gray-100 border border-gray-300 rounded-full dark:bg-gray-800 dark:border-gray-600 dark:text-white focus-visible:ring-yellow-500/80 text-md hover:bg-gray-900 hover:border-gray-700 hover:text-white dark:hover:bg-gray-100 dark:hover:border-gray-300 dark:hover:text-black group max-w-fit focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black transform transition-transform duration-300 hover:scale-110"
+        aria-hidden="true">‹</span
       >
-        <svg
-          class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 6 10"
-        >
-          <path
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M5 1 1 5l4 4"></path>
-        </svg>
-        <span class="sr-only">Previous</span>
-      </span>
+      <span class="visually-hidden">Previous</span>
     </button>
-    <button
-      type="button"
-      class="absolute top-1/2 right-0 z-30 flex items-center justify-center px-4 cursor-pointer group focus:outline-none transform -translate-y-1/2"
-      data-carousel-next
-    >
+    <button class="carousel-control-next" type="button">
       <span
-        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-400 dark:bg-white-800/30 dark:hover:bg-gray-100 group-hover:bg-gray-700 dark:group-hover:bg-white-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none transform transition-transform duration-300 hover:scale-110"
+        class="carousel-control-next-icon inline-flex items-center justify-center gap-2 px-4 py-1 text-gray-800 transition bg-gray-100 border border-gray-300 rounded-full dark:bg-gray-800 dark:border-gray-600 dark:text-white focus-visible:ring-yellow-500/80 text-md hover:bg-gray-900 hover:border-gray-700 hover:text-white dark:hover:bg-gray-100 dark:hover:border-gray-300 dark:hover:text-black group max-w-fit focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black transform transition-transform duration-300 hover:scale-110"
+        aria-hidden="true">›</span
       >
-        <svg
-          class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 6 10"
-        >
-          <path
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="m1 9 4-4-4-4"></path>
-        </svg>
-        <span class="sr-only">Next</span>
-      </span>
+      <span class="visually-hidden">Next</span>
     </button>
+  </div>
+
+  <!-- Indicadores del carrusel -->
+  <div
+    class="carousel-indicators absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse"
+  >
+    {
+      MAIN_REPOS.map((_, index) => (
+        <button
+          type="button"
+          class="w-3 h-3 rounded-full"
+          aria-current={index === 0 ? "true" : "false"}
+          aria-label={`Slide ${index + 1}`}
+          data-carousel-slide-to={index}
+        />
+      ))
+    }
   </div>
 </section>
 
+<style>
+  .repo-card {
+    padding-bottom: 0;
+  }
+
+  .carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .carousel-inner:hover {
+    transform: scale(1.02);
+  }
+
+  .carousel-item {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    opacity: 0;
+    transition:
+      opacity 0.5s ease-in-out,
+      transform 0.5s ease-in-out;
+  }
+
+  .carousel-item.active {
+    position: relative;
+    left: 0;
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /*   .carousel-item.prev {
+    position: relative;
+    left: -100%;
+    opacity: 1;
+    transform: translateX(-100%);
+  }
+ */
+  .carousel-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    position: relative;
+    transform: translateY(0);
+    color: white;
+    padding: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    z-index: 10;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    font-size: 2rem;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+
+  .carousel-indicators button {
+    background-color: gray;
+  }
+
+  .carousel-indicators button[aria-current="true"] {
+    background-color: black;
+  }
+</style>
+
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const items = document.querySelectorAll("[data-carousel-item]");
-    const indicators = document.querySelectorAll("[data-carousel-slide-to]");
-    let currentIndex = 0;
+  let currentSlide = 0;
+  const slides = document.querySelectorAll(".carousel-item");
+  const totalSlides = slides.length;
+  let autoplayTimeout: ReturnType<typeof setTimeout>;
+  let isAnimating = false;
 
-    function updateCarousel() {
-      items.forEach((item, index) => {
-        item.classList.toggle("block", index === currentIndex);
-        item.classList.toggle("hidden", index !== currentIndex);
-      });
-      indicators.forEach((indicator, index) => {
-        indicator.setAttribute(
-          "aria-current",
-          index === currentIndex ? "true" : "false"
-        );
-      });
-    }
+  const updateCarousel = (direction: string) => {
+    if (isAnimating) return;
+    isAnimating = true;
 
-    const prevButton = document.querySelector("[data-carousel-prev]");
-    if (prevButton) {
-      prevButton.addEventListener("click", () => {
-        currentIndex = currentIndex > 0 ? currentIndex - 1 : items.length - 1;
-        updateCarousel();
-      });
-    }
-
-    const nextButton = document.querySelector("[data-carousel-next]");
-    if (nextButton) {
-      nextButton.addEventListener("click", () => {
-        currentIndex = currentIndex < items.length - 1 ? currentIndex + 1 : 0;
-        updateCarousel();
-      });
-    }
-
-    indicators.forEach((indicator, index) => {
-      indicator.addEventListener("click", () => {
-        currentIndex = index;
-        updateCarousel();
-      });
+    slides.forEach((slide, index) => {
+      slide.classList.remove("prev", "active");
+      if (index === currentSlide) {
+        slide.classList.add("active");
+      } else if (index === (currentSlide - 1 + totalSlides) % totalSlides) {
+        slide.classList.add("prev");
+      }
     });
 
-    updateCarousel();
+    setTimeout(() => {
+      isAnimating = false;
+    }, 500); // Duración de la transición
+  };
+
+  const startAutoplay = () => {
+    autoplayTimeout = setTimeout(() => {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateCarousel("next");
+      startAutoplay(); // Reinicia el autoplay
+    }, 7000); // 7 segundos
+  };
+
+  // Botón "Next"
+  const nextButton = document.querySelector(".carousel-control-next");
+  if (nextButton) {
+    nextButton.addEventListener("click", () => {
+      clearTimeout(autoplayTimeout);
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateCarousel("next");
+      startAutoplay();
+    });
+  }
+
+  // Botón "Prev"
+  const prevButton = document.querySelector(".carousel-control-prev");
+  if (prevButton) {
+    prevButton.addEventListener("click", () => {
+      clearTimeout(autoplayTimeout);
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateCarousel("prev");
+      startAutoplay();
+    });
+  }
+
+  // Indicadores del carrusel
+  const indicators = document.querySelectorAll(".carousel-indicators button");
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener("click", () => {
+      clearTimeout(autoplayTimeout);
+      currentSlide = index;
+      updateCarousel("next");
+      startAutoplay();
+    });
   });
+
+  // Iniciar autoplay al cargar la página
+  startAutoplay();
 </script>
