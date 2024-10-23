@@ -13,6 +13,15 @@ async function fetchLanguages(repo: string) {
       'Authorization': `token ${GITHUB_TOKEN}`
     }
   });
+
+  console.log("GITHUB_TOKEN:", GITHUB_TOKEN);
+
+  if (!response.ok) {
+    const errorData = await response.json();
+    console.error("Error fetching languages:", errorData);
+    return {}; // Retorna un objeto vacío para evitar errores posteriores
+  }
+
   const data = await response.json();
 
   let totalBytes = 0;
