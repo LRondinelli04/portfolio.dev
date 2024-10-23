@@ -14,8 +14,6 @@ async function fetchLanguages(repo: string) {
     }
   });
 
-  console.log("GITHUB_TOKEN:", GITHUB_TOKEN);
-
   if (!response.ok) {
     const errorData = await response.json();
     console.error("Error fetching languages:", errorData);
