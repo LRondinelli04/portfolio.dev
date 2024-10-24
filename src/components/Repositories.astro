@@ -221,7 +221,7 @@ const repoLanguages = await Promise.all(
   .carousel-controls {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 30%;
   }
 
   .carousel-control-prev,
@@ -229,7 +229,7 @@ const repoLanguages = await Promise.all(
     position: relative;
     transform: translateY(0);
     color: white;
-    padding: 1rem;
+    margin: 1rem;
     cursor: pointer;
     border: none;
     border-radius: 50%;
@@ -287,8 +287,7 @@ const repoLanguages = await Promise.all(
   @media (max-width: 550px) {
     .disc-lenguajes {
       grid-template-columns: repeat(2, 1fr);
-      gap: 0.5rem
-      ;
+      gap: 0.5rem;
     }
   }
 
@@ -298,7 +297,6 @@ const repoLanguages = await Promise.all(
     }
     
   }
-
 </style>
 
 <script>
