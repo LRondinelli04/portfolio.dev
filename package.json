@@ -23,6 +23,7 @@
     "webcoreui": "^0.6.1"
   },
   "devDependencies": {
+    "prettier": "^3.3.3",
     "sass-embedded": "^1.80.3"
   }
 }
