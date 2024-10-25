@@ -16,6 +16,7 @@
     "@fontsource-variable/onest": "5.0.2",
     "astro": "^4.16.6",
     "astro-robots-txt": "1.0.0",
+    "dotenv": "^16.4.5",
     "react": "^18.3.1",
     "react-transition-group": "^4.4.5",
     "tailwindcss": "3.4.1",
@@ -23,10 +24,7 @@
     "webcoreui": "^0.6.1"
   },
   "devDependencies": {
-<<<<<<< HEAD
-=======
     "prettier": "^3.3.3",
->>>>>>> 6399e140ca090cf4f62249507c3c472f21301a91
     "sass-embedded": "^1.80.3"
   }
 }
