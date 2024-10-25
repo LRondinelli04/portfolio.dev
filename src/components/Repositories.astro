@@ -2,9 +2,6 @@
 // Importaciones necesarias
 import GitHub from "./icons/GitHub.astro";
 import LinkButton from "./LinkButton.astro";
-<<<<<<< HEAD
-import SocialPill from "./SocialPill.astro";
-=======
 
 // TOKEN den acceso a la API de GitHub
 const GITHUB_TOKEN = import.meta.env.GITHUB_TOKEN; // Usa una variable de entorno
@@ -56,7 +53,6 @@ function getColorForLanguage(language: string) {
 
   return languageColors[language] || "#ccc"; // Color predeterminado si no se encuentra
 }
->>>>>>> 6399e140ca090cf4f62249507c3c472f21301a91
 
 // Repositorios principales
 const MAIN_REPOS = [
@@ -80,12 +76,6 @@ const MAIN_REPOS = [
   },
   {
     title: "Portfolio.dev",
-<<<<<<< HEAD
-    description: "Repositorio con del código fuente de mi portfolio personal.",
-    github: "https://github.com/LRondinelli04/portfolio.dev",
-  },
-];
-=======
     description: "Repositorio con el código fuente de mi portfolio personal.",
     github: "https://github.com/LRondinelli04/portfolio.dev",
   },
@@ -100,30 +90,11 @@ const repoLanguages = await Promise.all(
     return languages;
   })
 );
->>>>>>> 6399e140ca090cf4f62249507c3c472f21301a91
 ---
 
 <!-- Sección de Repositorios Principales -->
 <section id="carouselExample" class="carousel slide mt-16">
   <div class="carousel-inner flex relative">
-<<<<<<< HEAD
-    {
-      MAIN_REPOS.map(({ title, description, github }, index) => (
-        <div
-          class={`carousel-item ${index === 0 ? "active" : ""}`}
-          style="width: 100%;"
-        >
-          <div class="repo-card p-4 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md bg-gray-100 dark:bg-gray-800 flex flex-col justify-between">
-            <div>
-              <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100 text-center underline">
-                {title}
-              </h3>
-              <p class="my-2 text-gray-600 dark:text-gray-300 px-5">
-                {description}
-              </p>
-            </div>
-            <div class="flex justify-end my-2">
-=======
     {MAIN_REPOS.map(({ title, description, github }, index) => (
       <div
         class={`carousel-item ${index === 0 ? "active" : ""}`}
@@ -159,7 +130,6 @@ const repoLanguages = await Promise.all(
 
           <div class="code my-2">
             <div class="code">
->>>>>>> 6399e140ca090cf4f62249507c3c472f21301a91
               <a href={github} class="btn btn-primary mt4">
                 <LinkButton href={github}>
                   <GitHub class="size-6" />
@@ -169,13 +139,8 @@ const repoLanguages = await Promise.all(
             </div>
           </div>
         </div>
-<<<<<<< HEAD
-      ))
-    }
-=======
       </div>
     ))}
->>>>>>> 6399e140ca090cf4f62249507c3c472f21301a91
   </div>
 
   <!-- Botones de navegación -->
@@ -200,19 +165,6 @@ const repoLanguages = await Promise.all(
   <div
     class="carousel-indicators absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse"
   >
-<<<<<<< HEAD
-    {
-      MAIN_REPOS.map((_, index) => (
-        <button
-          type="button"
-          class="w-3 h-3 rounded-full"
-          aria-current={index === 0 ? "true" : "false"}
-          aria-label={`Slide ${index + 1}`}
-          data-carousel-slide-to={index}
-        />
-      ))
-    }
-=======
     {MAIN_REPOS.map((_, index) => (
       <button
         type="button"
@@ -222,13 +174,10 @@ const repoLanguages = await Promise.all(
         data-carousel-slide-to={index}
       />
     ))}
->>>>>>> 6399e140ca090cf4f62249507c3c472f21301a91
   </div>
 </section>
 
 <style>
-<<<<<<< HEAD
-=======
 
   .lenguajes{
     @apply text-black dark:text-white;
@@ -237,7 +186,6 @@ const repoLanguages = await Promise.all(
     margin-left: -8px;
   }
 
->>>>>>> 6399e140ca090cf4f62249507c3c472f21301a91
   .repo-card {
     padding-bottom: 0;
   }
@@ -271,24 +219,10 @@ const repoLanguages = await Promise.all(
     transform: translateX(0);
   }
 
-<<<<<<< HEAD
-  /*   .carousel-item.prev {
-    position: relative;
-    left: -100%;
-    opacity: 1;
-    transform: translateX(-100%);
-  }
- */
-  .carousel-controls {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-=======
   .carousel-controls {
     display: flex;
     justify-content: center;
     gap: 30%;
->>>>>>> 6399e140ca090cf4f62249507c3c472f21301a91
   }
 
   .carousel-control-prev,
@@ -296,11 +230,7 @@ const repoLanguages = await Promise.all(
     position: relative;
     transform: translateY(0);
     color: white;
-<<<<<<< HEAD
-    padding: 1rem;
-=======
     margin: 1rem;
->>>>>>> 6399e140ca090cf4f62249507c3c472f21301a91
     cursor: pointer;
     border: none;
     border-radius: 50%;
@@ -330,8 +260,6 @@ const repoLanguages = await Promise.all(
   .carousel-indicators button[aria-current="true"] {
     background-color: black;
   }
-<<<<<<< HEAD
-=======
 
   .language-bar-container {
     display: flex;
@@ -370,7 +298,6 @@ const repoLanguages = await Promise.all(
     }
     
   }
->>>>>>> 6399e140ca090cf4f62249507c3c472f21301a91
 </style>
 
 <script>
