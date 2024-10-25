@@ -96,9 +96,43 @@ const { description, title } = Astro.props;
         background-color: rgb(229, 229, 229);
         border-radius: 9999px;
       }
+<<<<<<< HEAD
     }
   
     @media (prefers-color-scheme: dark) {
+=======
+
+      /* responsive para mobiles */
+      @media (max-width: 768px) {
+        body {
+          font-size: 0.875rem;
+          /*           padding: 1rem;
+        padding-left: 2rem; */
+        }
+        #background {
+          width: 100%;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+
+      @media (prefers-color-scheme: dark) {
+        body {
+          color: rgba(255, 255, 255, 0.9);
+        }
+      }
+
+      #header-nav {
+        animation: blur linear both 0.5s;
+        animation-timeline: scroll();
+        animation-range: 0 500px;
+      }
+
+>>>>>>> 6399e140ca090cf4f62249507c3c472f21301a91
       @keyframes blur {
         from {
           border: 0px;
@@ -130,8 +164,19 @@ const { description, title } = Astro.props;
         width: 100%;
         padding: 0 1rem;
       }
+<<<<<<< HEAD
     } */
   </style>
+=======
+
+      @media (max-width: 675px) {
+        #background {
+          width: 100%;
+          padding: 0 1rem;
+        }
+      }
+    </style>
+>>>>>>> 6399e140ca090cf4f62249507c3c472f21301a91
   </body>
 </html>
 
