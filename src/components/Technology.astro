@@ -13,7 +13,7 @@ import Pascal from "./icons/Pascal.astro";
 import Git from "./icons/Git.astro";
 import GitHub from "./icons/GitHub.astro";
 
-const FRONTEND_TAGS = {
+const TECH_TAGS = {
   HTML: {
     name: "HTML",
     icon: Html,
@@ -38,9 +38,6 @@ const FRONTEND_TAGS = {
     name: "SCSS",
     icon: Scss,
   },
-};
-
-const BACKEND_TAGS = {
   DOTNET: {
     name: ".NET",
     icon: DotNet,
@@ -66,36 +63,16 @@ const TOOL_TAGS = {
   },
 };
 
-const FRONTEND_TECHNOLOGIES = Object.values(FRONTEND_TAGS);
-const BACKEND_TECHNOLOGIES = Object.values(BACKEND_TAGS);
+const TECH_TECHNOLOGIES = Object.values(TECH_TAGS);
 const TOOL_TECHNOLOGIES = Object.values(TOOL_TAGS);
 ---
 
-<!-- Sección de Front-end -->
+<!-- Sección de Lenguajes aprendidos -->
 <div class="mb-10">
-  <h2 class="text-2xl font-bold text-center mb-4">Front-end</h2>
+  <h2 class="text-2xl font-bold text-center mb-4">Lenguajes y Tecnologías</h2>
   <div class="flex flex-wrap justify-center gap-6">
     {
-      FRONTEND_TECHNOLOGIES.map(({ name, icon: Icon }) => (
-        <div class="group relative flex items-center justify-center transition-transform duration-300 bg-gray-100 border border-gray-300 rounded-full p-8 shadow-lg hover:scale-110 hover:shadow-xl dark:bg-gray-800 dark:border-gray-600 dark:hover:bg-gray-700">
-          <Icon class="size-8" />
-          <div class="absolute bottom-0 flex-col items-center hidden mb-6 group-hover:flex">
-            <span class="nameSpace relative z-10 mb-5 p-2 text-xs leading-none text-white whitespace-no-wrap bg-black shadow-lg rounded-md">
-              {name}
-            </span>
-          </div>
-        </div>
-      ))
-    }
-  </div>
-</div>
-
-<!-- Sección de Back-end -->
-<div class="mb-10">
-  <h2 class="text-2xl font-bold text-center mb-4">Back-end</h2>
-  <div class="flex flex-wrap justify-center gap-6">
-    {
-      BACKEND_TECHNOLOGIES.map(({ name, icon: Icon }) => (
+      TECH_TECHNOLOGIES.map(({ name, icon: Icon }) => (
         <div class="group relative flex items-center justify-center transition-transform duration-300 bg-gray-100 border border-gray-300 rounded-full p-8 shadow-lg hover:scale-110 hover:shadow-xl dark:bg-gray-800 dark:border-gray-600 dark:hover:bg-gray-700">
           <Icon class="size-8" />
           <div class="absolute bottom-0 flex-col items-center hidden mb-6 group-hover:flex">
