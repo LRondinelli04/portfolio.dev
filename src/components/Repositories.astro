@@ -144,7 +144,7 @@ const repoLanguages = await Promise.all(
       </div>
     ))}
   </div>
-
+  
   <!-- Botones de navegación -->
   <div class="carousel-controls flex justify-center mt-4">
     <button class="carousel-control-prev" type="button">
@@ -161,21 +161,6 @@ const repoLanguages = await Promise.all(
       >
       <span class="visually-hidden">Next</span>
     </button>
-  </div>
-
-  <!-- Indicadores del carrusel -->
-  <div
-    class="carousel-indicators absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse"
-  >
-    {MAIN_REPOS.map((_, index) => (
-      <button
-        type="button"
-        class="w-3 h-3 rounded-full"
-        aria-current={index === 0 ? "true" : "false"}
-        aria-label={`Slide ${index + 1}`}
-        data-carousel-slide-to={index}
-      />
-    ))}
   </div>
 </section>
 
