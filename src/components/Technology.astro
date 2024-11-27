@@ -78,10 +78,16 @@ const TOOL_TECHNOLOGIES = Object.values(TOOL_TAGS);
   <div class="flex flex-wrap justify-center gap-6">
     {
       TECH_TECHNOLOGIES.map(({ name, icon: Icon }) => (
-        <div class="group relative flex items-center justify-center transition-transform duration-300 bg-gray-100 border border-gray-300 rounded-full p-8 shadow-lg hover:scale-110 hover:shadow-xl dark:bg-gray-800 dark:border-gray-600 dark:hover:bg-gray-700">
-          <Icon class="size-8" />
-          <div class="absolute bottom-0 flex-col items-center hidden mb-6 group-hover:flex">
-            <span class="nameSpace relative z-10 mb-5 p-2 text-xs leading-none text-white whitespace-no-wrap bg-black shadow-lg rounded-md">
+        <div
+          id="bubble"
+          class="group relative inline-flex overflow-hidden rounded-full p-[1px]"
+        >
+          <span class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#C0C0C0_0%,#808080_50%,#C0C0C0_100%)]" />
+          <div class="relative flex items-center justify-center w-full p-8 text-sm text-green-800 bg-gray-100 border border-gray-300 rounded-full dark:bg-gray-800 dark:text-white/80 backdrop-blur-3xl whitespace-nowrap shadow-lg dark:border-gray-600">
+            <Icon class="size-8" />
+          </div>
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <span class="relative z-10 p-2 text-xs leading-none text-white whitespace-no-wrap bg-black shadow-lg rounded-md">
               {name}
             </span>
           </div>
@@ -97,10 +103,16 @@ const TOOL_TECHNOLOGIES = Object.values(TOOL_TAGS);
   <div class="flex flex-wrap justify-center gap-6">
     {
       TOOL_TECHNOLOGIES.map(({ name, icon: Icon }) => (
-        <div class="group relative flex items-center justify-center transition-transform duration-300 bg-gray-100 border border-gray-300 rounded-full p-8 shadow-lg hover:scale-110 hover:shadow-xl dark:bg-gray-800 dark:border-gray-600 dark:hover:bg-gray-700">
-          <Icon class="size-8" />
-          <div class="absolute bottom-0 flex-col items-center hidden mb-6 group-hover:flex">
-            <span class="nameSpace relative z-10 mb-5 p-2 text-xs leading-none text-white whitespace-no-wrap bg-black shadow-lg rounded-md">
+        <div
+          id="bubble"
+          class="group relative inline-flex overflow-hidden rounded-full p-[1px]"
+        >
+          <span class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#C0C0C0_0%,#808080_50%,#C0C0C0_100%)]" />
+          <div class="relative flex items-center justify-center w-full p-8 text-sm text-green-800 bg-gray-100 border border-gray-300 rounded-full cursor-pointer dark:bg-gray-800 dark:text-white/80 backdrop-blur-3xl whitespace-nowrap shadow-lg dark:border-gray-600">
+            <Icon class="size-8" />
+          </div>
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <span class="relative z-10 p-2 text-xs leading-none text-white whitespace-no-wrap bg-black shadow-lg rounded-md">
               {name}
             </span>
           </div>
@@ -117,7 +129,10 @@ const TOOL_TECHNOLOGIES = Object.values(TOOL_TAGS);
     height: 30px; /* Ajusta según necesites */
   }
 
-  .nameSpace {
-    top: -40px;
+  #bubble {
+    transition: ease-in-out 0.2s;
+  }
+  #bubble:hover {
+    scale: 1.1;
   }
 </style>
