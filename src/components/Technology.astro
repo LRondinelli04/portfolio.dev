@@ -96,7 +96,7 @@ const TOOL_TECHNOLOGIES = Object.values(TOOL_TAGS);
           <div class="relative flex items-center justify-center w-full p-8 text-sm text-green-800 bg-gray-100 border border-gray-300 rounded-full dark:bg-gray-800 dark:text-white/80 backdrop-blur-3xl whitespace-nowrap shadow-lg dark:border-gray-600">
             <Icon class="size-8" />
             <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <span class="nameSpace relative z-10 p-2 text-xs leading-none text-white whitespace-no-wrap bg-black shadow-lg rounded-md">
+              <span class="nameSpace relative z-10 p-2 text-xs leading-none text-white whitespace-no-wrap">
                 {name}
               </span>
             </div>
@@ -118,7 +118,7 @@ const TOOL_TECHNOLOGIES = Object.values(TOOL_TAGS);
           <div class="relative flex items-center justify-center w-full p-8 text-sm text-green-800 bg-gray-100 border border-gray-300 rounded-full cursor-pointer dark:bg-gray-800 dark:text-white/80 backdrop-blur-3xl whitespace-nowrap shadow-lg dark:border-gray-600">
             <Icon class="size-8" />
             <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <span class="nameSpace relative z-10 p-2 text-xs leading-none text-white whitespace-no-wrap bg-black shadow-lg rounded-md">
+              <span class="nameSpace relative z-10 p-2 text-xs leading-none text-white whitespace-no-wrap">
                 {name}
               </span>
             </div>
@@ -141,5 +141,10 @@ const TOOL_TECHNOLOGIES = Object.values(TOOL_TAGS);
   }
   #bubble:hover {
     scale: 1.1;
+  }
+
+  .nameSpace{
+    top: -25%;
+    border-radius: 40%;
   }
 </style>
