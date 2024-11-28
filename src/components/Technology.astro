@@ -115,7 +115,7 @@ const TOOL_TECHNOLOGIES = Object.values(TOOL_TAGS);
       TOOL_TECHNOLOGIES.map(({ name, icon: Icon, color }) => (
         <div id="bubble" class="group relative inline-flex overflow-hidden rounded-full p-[1px]">
           <span class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite]" style={`background: conic-gradient(from 90deg at 50% 50%, ${color} 0%, #808080 50%, ${color} 100%);`}></span>
-          <div class="relative flex items-center justify-center w-full p-8 text-sm text-green-800 bg-gray-100 border border-gray-300 rounded-full cursor-pointer dark:bg-gray-800 dark:text-white/80 backdrop-blur-3xl whitespace-nowrap shadow-lg dark:border-gray-600">
+          <div class="relative flex items-center justify-center w-full p-8 text-sm text-green-800 bg-gray-100 border border-gray-300 rounded-full dark:bg-gray-800 dark:text-white/80 backdrop-blur-3xl whitespace-nowrap shadow-lg dark:border-gray-600">
             <Icon class="size-8" />
             <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <span class="nameSpace relative z-10 p-2 text-xs leading-none text-white whitespace-no-wrap">
