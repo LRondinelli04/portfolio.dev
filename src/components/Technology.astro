@@ -13,43 +13,53 @@ import Pascal from "./icons/Pascal.astro";
 import Git from "./icons/Git.astro";
 import GitHub from "./icons/GitHub.astro";
 import SqlServer from "./icons/Sql.astro";
+import { closePopover } from "webcoreui";
 
 const TECH_TAGS = {
   HTML: {
     name: "HTML",
     icon: Html,
+    color: "#E34C26",
   },
   CSS: {
     name: "CSS",
     icon: Css,
+    color: "#264DE4",
   },
   JAVASCRIPT: {
     name: "JavaScript",
     icon: JavaScript,
+    color: "#F7DF1E",
   },
   TYPESCRIPT: {
     name: "TypeScript",
     icon: Typescript,
+    color: "#3178C6",
   },
   ANGULAR: {
     name: "Angular",
     icon: Angular,
+    color: "#DD0031",
   },
   SCSS: {
     name: "SCSS",
     icon: Scss,
+    color: "#C6538C",
   },
   DOTNET: {
     name: ".NET",
     icon: DotNet,
+    color: "#512BD4",
   },
   CSHARP: {
     name: "C#",
     icon: Csharp,
+    color: "#178600",
   },
   JAVA: {
     name: "Java",
     icon: Java,
+    color: "#B07219",
   },
 };
 
@@ -57,14 +67,17 @@ const TOOL_TAGS = {
   GIT: {
     name: "Git",
     icon: Git,
+    color: "#F05032",
   },
   GITHUB: {
     name: "GitHub",
     icon: GitHub,
+    color: "#181717",
   },
   SQL_SERVER: {
     name: "SQL Server",
     icon: SqlServer,
+    color: "#CC2927",
   },
 };
 
@@ -77,19 +90,16 @@ const TOOL_TECHNOLOGIES = Object.values(TOOL_TAGS);
   <h2 class="text-2xl font-bold text-center mb-4">Lenguajes y Tecnologías</h2>
   <div class="flex flex-wrap justify-center gap-6">
     {
-      TECH_TECHNOLOGIES.map(({ name, icon: Icon }) => (
-        <div
-          id="bubble"
-          class="group relative inline-flex overflow-hidden rounded-full p-[1px]"
-        >
-          <span class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#C0C0C0_0%,#808080_50%,#C0C0C0_100%)]" />
+      TECH_TECHNOLOGIES.map(({ name, icon: Icon, color }) => (
+        <div id="bubble" class="group relative inline-flex overflow-hidden rounded-full p-[1px]">
+          <span class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite]" style={`background: conic-gradient(from 90deg at 50% 50%, ${color} 0%, #808080 50%, ${color} 100%);`}></span>
           <div class="relative flex items-center justify-center w-full p-8 text-sm text-green-800 bg-gray-100 border border-gray-300 rounded-full dark:bg-gray-800 dark:text-white/80 backdrop-blur-3xl whitespace-nowrap shadow-lg dark:border-gray-600">
             <Icon class="size-8" />
-          </div>
-          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <span class="relative z-10 p-2 text-xs leading-none text-white whitespace-no-wrap bg-black shadow-lg rounded-md">
-              {name}
-            </span>
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="nameSpace relative z-10 p-2 text-xs leading-none text-white whitespace-no-wrap bg-black shadow-lg rounded-md">
+                {name}
+              </span>
+            </div>
           </div>
         </div>
       ))
@@ -102,19 +112,16 @@ const TOOL_TECHNOLOGIES = Object.values(TOOL_TAGS);
   <h2 class="text-2xl font-bold text-center mb-4">Herramientas</h2>
   <div class="flex flex-wrap justify-center gap-6">
     {
-      TOOL_TECHNOLOGIES.map(({ name, icon: Icon }) => (
-        <div
-          id="bubble"
-          class="group relative inline-flex overflow-hidden rounded-full p-[1px]"
-        >
-          <span class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#C0C0C0_0%,#808080_50%,#C0C0C0_100%)]" />
+      TOOL_TECHNOLOGIES.map(({ name, icon: Icon, color }) => (
+        <div id="bubble" class="group relative inline-flex overflow-hidden rounded-full p-[1px]">
+          <span class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite]" style={`background: conic-gradient(from 90deg at 50% 50%, ${color} 0%, #808080 50%, ${color} 100%);`}></span>
           <div class="relative flex items-center justify-center w-full p-8 text-sm text-green-800 bg-gray-100 border border-gray-300 rounded-full cursor-pointer dark:bg-gray-800 dark:text-white/80 backdrop-blur-3xl whitespace-nowrap shadow-lg dark:border-gray-600">
             <Icon class="size-8" />
-          </div>
-          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <span class="relative z-10 p-2 text-xs leading-none text-white whitespace-no-wrap bg-black shadow-lg rounded-md">
-              {name}
-            </span>
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="nameSpace relative z-10 p-2 text-xs leading-none text-white whitespace-no-wrap bg-black shadow-lg rounded-md">
+                {name}
+              </span>
+            </div>
           </div>
         </div>
       ))
