@@ -8,7 +8,7 @@
 
 <div align="center">
 <a href="https://portfolio-dev-nine-pi.vercel.app/">
-<img src="./public/portfolio.jpg">
+<img src="/public/portfolio.jpg">
 </a>
 <p></p>
 </div>
