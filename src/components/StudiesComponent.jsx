@@ -1,7 +1,7 @@
 import { useState } from "react";
-import LinkedInIcon from "@/components/icons/LinkedinIcon";
-import CertificationsIcon from "@/components/icons/Studies";
-import SocialPill from "@/components/SocialPill";
+import LinkedInIcon from "./icons/LinkedinIcon.jsx";
+import CertificationsIcon from "./icons/Studies.jsx";
+import SocialPill from "./SocialPill.jsx";
 
 const CertificationsComponent = ({ certifications }) => {
   const [openCertification, setOpenCertification] = useState(null);
@@ -19,7 +19,7 @@ const CertificationsComponent = ({ certifications }) => {
 
   const openStyles = {
     opacity: 1,
-    maxHeight: "1000px", // Ajusta esto según sea necesario
+    maxHeight: "1000px",
   };
 
   return (
@@ -68,20 +68,18 @@ const CertificationsComponent = ({ certifications }) => {
                 <p> Publicación </p>
               </SocialPill>
 
-              {/* Botón Ver más para desplegar sub-certificaciones */}
               {certification.subCertifications && (
                 <button
                   className={
                     "inline-flex items-center justify-center gap-2 px-4 py-1 text-gray-800 transition bg-gray-100 border border-gray-300 rounded-full dark:bg-gray-800 dark:border-gray-600 dark:text-white focus-visible:ring-yellow-500/80 text-md hover:bg-gray-900 hover:border-gray-700 hover:text-white dark:hover:bg-gray-100 dark:hover:border-gray-300 dark:hover:text-black group max-w-fit focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black w-max transition-transform duration-300 hover:scale-110"
                   }
-                  onClick={() => toggleSubCertifications(index)} // REACT maneja el evento
+                  onClick={() => toggleSubCertifications(index)}
                 >
                   {openCertification === index ? "Ver menos" : "Ver cursos"}
                 </button>
               )}
             </div>
 
-            {/* Mostrar sub-certificaciones si están disponibles y activas */}
             <div
               style={{
                 ...transitionStyles,

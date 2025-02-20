@@ -7,8 +7,7 @@ dotenv.config();
 
 import robotsTxt from "astro-robots-txt";
 
-// https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), robotsTxt(), react()],
-  site: "https://porfolio.dev/",
+  site: "https://porfolio.dev/"
 });
