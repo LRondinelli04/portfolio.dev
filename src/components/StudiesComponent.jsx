@@ -108,16 +108,18 @@ const CertificationsComponent = ({ certifications }) => {
                                 <CertificationsIcon className="size-4" />
                                 Certificado
                               </SocialPill>
-                              <span className="ml-2">
-                                <SocialPill
-                                  href={subCert.linkedinLink}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                >
-                                  <LinkedInIcon className="size-4" />
-                                  Publicación
-                                </SocialPill>
-                              </span>
+                              {subCert.linkedinLink && (
+                                <span className="ml-2">
+                                  <SocialPill
+                                    href={subCert.linkedinLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                  >
+                                    <LinkedInIcon className="size-4" />
+                                    Publicación
+                                  </SocialPill>
+                                </span>
+                              )}
                             </div>
                           </li>
                         )
