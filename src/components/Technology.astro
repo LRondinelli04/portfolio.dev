@@ -88,23 +88,29 @@ const TOOL_TECHNOLOGIES = Object.values(TOOL_TAGS);
 <!-- Sección de Lenguajes aprendidos -->
 <div class="mb-10">
   <h2 class="text-2xl font-bold text-center mb-4">Lenguajes y Tecnologías</h2>
-  <div class="flex flex-wrap justify-center gap-6">
+  <div
+    class="flex flex-wrap justify-center gap-6"
+  >
     {
-      TECH_TECHNOLOGIES.map(({ name, icon: Icon, color }) => (
+      TECH_TECHNOLOGIES.map(({ /* name, */ icon: Icon, color }) => (
         <div
           id="bubble"
-          class="group relative inline-flex overflow-hidden rounded-full p-[1px]"
+          class="group relative inline-flex overflow-hidden p-[1px]"
+          style="border-radius: 20px;"
         >
           <span
             class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite]"
             style={`background: conic-gradient(from 90deg at 50% 50%, ${color} 0%, #808080 50%, ${color} 100%);`}
           />
-          <div class="relative flex items-center justify-center w-full p-8 text-sm text-green-800 bg-gray-100 border border-gray-300 rounded-full dark:bg-gray-800 dark:text-white/80 backdrop-blur-3xl whitespace-nowrap shadow-lg dark:border-gray-600 group-hover:bg-opacity-60">
+          <div
+            class="relative flex items-center justify-center w-full p-8 text-sm text-green-800 bg-gray-100 border border-gray-300 dark:bg-gray-800 dark:text-white/80 backdrop-blur-3xl whitespace-nowrap shadow-lg dark:border-gray-600 group-hover:bg-opacity-60"
+            style="border-radius: 20px;"
+          >
             <Icon class="size-8" />
             <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <span class="nameSpace relative z-10 p-2 text-xs leading-none text-black dark:text-white whitespace-no-wrap">
+              {/* <span class="nameSpace relative z-10 p-2 text-xs leading-none text-black dark:text-white whitespace-no-wrap">
                 {name}
-              </span>
+              </span> */}
             </div>
           </div>
         </div>
@@ -118,21 +124,25 @@ const TOOL_TECHNOLOGIES = Object.values(TOOL_TAGS);
   <h2 class="text-2xl font-bold text-center mb-4">Herramientas</h2>
   <div class="flex flex-wrap justify-center gap-6">
     {
-      TOOL_TECHNOLOGIES.map(({ name, icon: Icon, color }) => (
+      TOOL_TECHNOLOGIES.map(({ /* name, */ icon: Icon, color }) => (
         <div
           id="bubble"
-          class="group relative inline-flex overflow-hidden rounded-full p-[1px]"
+          class="group relative inline-flex overflow-hidden p-[1px]"
+          style="border-radius: 20px;"
         >
           <span
             class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite]"
             style={`background: conic-gradient(from 90deg at 50% 50%, ${color} 0%, #808080 50%, ${color} 100%);`}
           />
-          <div class="relative flex items-center justify-center w-full p-8 text-sm text-green-800 bg-gray-100 border border-gray-300 rounded-full dark:bg-gray-800 dark:text-white/80 backdrop-blur-3xl whitespace-nowrap shadow-lg dark:border-gray-600 group-hover:bg-opacity-60">
+          <div
+            class="relative flex items-center justify-center w-full p-8 text-sm text-green-800 bg-gray-100 border border-gray-300 dark:bg-gray-800 dark:text-white/80 backdrop-blur-3xl whitespace-nowrap shadow-lg dark:border-gray-600 group-hover:bg-opacity-60"
+            style="border-radius: 20px;"
+          >
             <Icon class="size-8" />
             <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <span class="nameSpace relative z-10 p-2 text-xs leading-none text-black dark:text-white whitespace-no-wrap">
+              {/*  <span class="nameSpace relative z-10 p-2 text-xs leading-none text-black dark:text-white whitespace-no-wrap">
                 {name}
-              </span>
+              </span> */}
             </div>
           </div>
         </div>
