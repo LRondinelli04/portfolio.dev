@@ -14,52 +14,62 @@ import Git from "./icons/Git.astro";
 import GitHub from "./icons/GitHub.astro";
 import SqlServer from "./icons/Sql.astro";
 import { closePopover } from "webcoreui";
+import Link from "./icons/Link.astro";
 
 const TECH_TAGS = {
   HTML: {
     name: "HTML",
     icon: Html,
     color: "#E34C26",
+    link: "https://developer.mozilla.org/es/docs/Web/HTML",
   },
   CSS: {
     name: "CSS",
     icon: Css,
     color: "#264DE4",
+    link: "https://developer.mozilla.org/es/docs/Web/CSS",
   },
   JAVASCRIPT: {
     name: "JavaScript",
     icon: JavaScript,
     color: "#F7DF1E",
+    link: "https://developer.mozilla.org/es/docs/Web/JavaScript",
   },
   TYPESCRIPT: {
     name: "TypeScript",
     icon: Typescript,
     color: "#3178C6",
+    link: "https://www.typescriptlang.org/",
   },
   ANGULAR: {
     name: "Angular",
     icon: Angular,
     color: "#DD0031",
+    link: "https://angular.dev/",
   },
   SCSS: {
     name: "SCSS",
     icon: Scss,
     color: "#C6538C",
+    link: "https://sass-lang.com/",
   },
   DOTNET: {
     name: ".NET",
     icon: DotNet,
     color: "#512BD4",
+    link: "https://dotnet.microsoft.com/es-es/",
   },
   CSHARP: {
     name: "C#",
     icon: Csharp,
     color: "#178600",
+    link: "https://dotnet.microsoft.com/es-es/languages/csharp",
   },
   JAVA: {
     name: "Java",
     icon: Java,
     color: "#B07219",
+    link: "https://www.java.com/es/",
   },
 };
 
@@ -68,16 +78,19 @@ const TOOL_TAGS = {
     name: "Git",
     icon: Git,
     color: "#F05032",
+    link: "https://git-scm.com/",
   },
   GITHUB: {
     name: "GitHub",
     icon: GitHub,
     color: "#181717",
+    link: "https://github.com/",
   },
   SQL_SERVER: {
     name: "SQL Server",
     icon: SqlServer,
     color: "#CC2927",
+    link: "https://www.microsoft.com/es-ar/sql-server",
   },
 };
 
@@ -88,31 +101,31 @@ const TOOL_TECHNOLOGIES = Object.values(TOOL_TAGS);
 <!-- Sección de Lenguajes aprendidos -->
 <div class="mb-10">
   <h2 class="text-2xl font-bold text-center mb-4">Lenguajes y Tecnologías</h2>
-  <div
-    class="flex flex-wrap justify-center gap-6"
-  >
+  <div class="flex flex-wrap justify-center gap-6">
     {
-      TECH_TECHNOLOGIES.map(({ /* name, */ icon: Icon, color }) => (
+      TECH_TECHNOLOGIES.map(({ /* name, */ icon: Icon, color, link }) => (
         <div
           id="bubble"
           class="group relative inline-flex overflow-hidden p-[1px]"
           style="border-radius: 20px;"
         >
-          <span
-            class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite]"
-            style={`background: conic-gradient(from 90deg at 50% 50%, ${color} 0%, #808080 50%, ${color} 100%);`}
-          />
-          <div
-            class="relative flex items-center justify-center w-full p-8 text-sm text-green-800 bg-gray-100 border border-gray-300 dark:bg-gray-800 dark:text-white/80 backdrop-blur-3xl whitespace-nowrap shadow-lg dark:border-gray-600 group-hover:bg-opacity-60"
-            style="border-radius: 20px;"
-          >
-            <Icon class="size-8" />
-            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              {/* <span class="nameSpace relative z-10 p-2 text-xs leading-none text-black dark:text-white whitespace-no-wrap">
+          <a href={link || "#"} target="_blank">
+            <span
+              class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite]"
+              style={`background: conic-gradient(from 90deg at 50% 50%, ${color} 0%, #808080 50%, ${color} 100%);`}
+            />
+            <div
+              class="relative flex items-center justify-center w-full p-8 text-sm text-green-800 bg-gray-100 border border-gray-300 dark:bg-gray-800 dark:text-white/80 backdrop-blur-3xl whitespace-nowrap shadow-lg dark:border-gray-600 group-hover:bg-opacity-60"
+              style="border-radius: 20px;"
+            >
+              <Icon class="size-8" />
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {/* <span class="nameSpace relative z-10 p-2 text-xs leading-none text-black dark:text-white whitespace-no-wrap">
                 {name}
               </span> */}
+              </div>
             </div>
-          </div>
+          </a>
         </div>
       ))
     }
@@ -124,27 +137,29 @@ const TOOL_TECHNOLOGIES = Object.values(TOOL_TAGS);
   <h2 class="text-2xl font-bold text-center mb-4">Herramientas</h2>
   <div class="flex flex-wrap justify-center gap-6">
     {
-      TOOL_TECHNOLOGIES.map(({ /* name, */ icon: Icon, color }) => (
+      TOOL_TECHNOLOGIES.map(({ /* name, */ icon: Icon, color, link }) => (
         <div
           id="bubble"
           class="group relative inline-flex overflow-hidden p-[1px]"
           style="border-radius: 20px;"
         >
-          <span
-            class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite]"
-            style={`background: conic-gradient(from 90deg at 50% 50%, ${color} 0%, #808080 50%, ${color} 100%);`}
-          />
-          <div
-            class="relative flex items-center justify-center w-full p-8 text-sm text-green-800 bg-gray-100 border border-gray-300 dark:bg-gray-800 dark:text-white/80 backdrop-blur-3xl whitespace-nowrap shadow-lg dark:border-gray-600 group-hover:bg-opacity-60"
-            style="border-radius: 20px;"
-          >
-            <Icon class="size-8" />
-            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              {/*  <span class="nameSpace relative z-10 p-2 text-xs leading-none text-black dark:text-white whitespace-no-wrap">
+          <a href={link || "#"}>
+            <span
+              class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite]"
+              style={`background: conic-gradient(from 90deg at 50% 50%, ${color} 0%, #808080 50%, ${color} 100%);`}
+            />
+            <div
+              class="relative flex items-center justify-center w-full p-8 text-sm text-green-800 bg-gray-100 border border-gray-300 dark:bg-gray-800 dark:text-white/80 backdrop-blur-3xl whitespace-nowrap shadow-lg dark:border-gray-600 group-hover:bg-opacity-60"
+              style="border-radius: 20px;"
+            >
+              <Icon class="size-8" />
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {/*  <span class="nameSpace relative z-10 p-2 text-xs leading-none text-black dark:text-white whitespace-no-wrap">
                 {name}
               </span> */}
+              </div>
             </div>
-          </div>
+          </a>
         </div>
       ))
     }
